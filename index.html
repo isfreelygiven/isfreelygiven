@@ -4,548 +4,103 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Freely Given | A Nonprofit Consent Movement</title>
-  <meta
-    name="description"
-    content="Freely Given is a nonprofit building a public movement around consent — through culture change, accountability tools, and International Consent Day every August 1."
-  >
-  <!-- Open Graph -->
+  <meta name="description" content="Freely Given is a nonprofit building a public movement around consent — through culture change, accountability tools, and International Consent Day every August 1.">
   <meta property="og:title" content="Freely Given — Making Consent Impossible to Ignore">
-  <meta property="og:description" content="A nonprofit building a public movement around consent through culture change, accountability tools, and International Consent Day.">
+  <meta property="og:description" content="Too many people have learned about consent the hard way. We're building the movement to change that.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://freelygiven.org">
+  <meta property="og:url" content="https://isfreelygiven.org">
   <meta property="og:image" content="assets/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <!-- Favicon — green dot -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%2312d46b'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #f4efe7;
-      --bg-soft: #ede6db;
-      --surface: rgba(255, 255, 255, 0.72);
-      --surface-strong: rgba(255, 255, 255, 0.92);
-      --ink: #181613;
-      --muted: #5f5a54;
-      --line: rgba(24, 22, 19, 0.12);
-      --deep: #111111;
-      --green: #12d46b;
-      --green-deep: #0d9a4d;
-      --green-subtle: #0d7c40;
-      --shadow: 0 24px 80px rgba(18, 15, 12, 0.10);
-      --radius: 28px;
-      --max: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      font-family: "Manrope", sans-serif;
-      color: var(--ink);
-      background:
-        radial-gradient(circle at top left, rgba(18, 212, 107, 0.10), transparent 26rem),
-        radial-gradient(circle at 85% 12%, rgba(17, 17, 17, 0.05), transparent 22rem),
-        linear-gradient(180deg, #f8f4ee 0%, #f2ebdf 42%, #f8f5ef 100%);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-
-    /* ── Skip Link ── */
-    .skip-link {
-      position: absolute; left: 1rem; top: -3rem;
-      padding: 0.75rem 1rem; background: #fff;
-      border-radius: 999px; z-index: 100; text-decoration: none;
-    }
-    .skip-link:focus { top: 1rem; }
-
-    /* ── Shell ── */
-    .site-shell {
-      width: min(calc(100% - 2rem), var(--max));
-      margin: 0 auto;
-    }
-
-    /* ── Header ── */
-    .site-header {
-      position: sticky; top: 0; z-index: 10;
-      backdrop-filter: blur(18px);
-      background: rgba(248, 244, 238, 0.72);
-      border-bottom: 1px solid rgba(24, 22, 19, 0.06);
-    }
-
-    .nav {
-      display: flex; align-items: center;
-      justify-content: space-between;
-      gap: 1rem; min-height: 4.8rem;
-    }
-
-    .brand {
-      display: inline-flex; align-items: center; gap: 0.85rem;
-      text-decoration: none; font-weight: 800;
-      letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.78rem;
-    }
-
-    .brand-mark {
-      width: 0.8rem; height: 0.8rem; border-radius: 50%;
-      background: var(--green);
-      box-shadow: 0 0 18px rgba(18, 212, 107, 0.65);
-      flex: 0 0 auto;
-    }
-
-    .nav-links {
-      display: flex; align-items: center;
-      gap: 1.35rem; flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none; color: var(--muted);
-      font-weight: 600; font-size: 0.95rem;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--ink); }
-
-    /* ── Buttons ── */
-    .button {
-      display: inline-flex; align-items: center; justify-content: center;
-      min-height: 3.1rem; padding: 0.85rem 1.5rem;
-      border-radius: 999px; border: 1px solid transparent;
-      text-decoration: none; font-weight: 700; font-size: 0.95rem;
-      letter-spacing: 0.01em;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-    }
-    .button:hover, .button:focus-visible { transform: translateY(-1px); }
-
-    .button-primary {
-      background: var(--green-deep);
-      color: #ffffff;
-      box-shadow: 0 12px 28px rgba(13, 154, 77, 0.22);
-    }
-    .button-primary:hover {
-      background: var(--green-subtle);
-      box-shadow: 0 16px 36px rgba(13, 154, 77, 0.28);
-    }
-
-    .button-dark {
-      background: var(--deep);
-      color: #ffffff;
-      box-shadow: 0 12px 28px rgba(17, 17, 17, 0.16);
-    }
-
-    .button-secondary {
-      background: rgba(255, 255, 255, 0.66);
-      color: var(--ink);
-      border-color: rgba(24, 22, 19, 0.12);
-    }
-
-    .button-ghost {
-      background: rgba(255, 255, 255, 0.10);
-      color: rgba(249, 246, 240, 0.9);
-      border-color: rgba(255, 255, 255, 0.15);
-    }
-
-    /* ── Hero ── */
-    .hero { padding: 5rem 0 3rem; }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.5rem;
-      align-items: stretch;
-    }
-
-    .hero-copy {
-      padding: clamp(2.2rem, 4.5vw, 4.2rem);
-      background:
-        radial-gradient(circle at 30% 0%, rgba(18, 212, 107, 0.12), transparent 18rem),
-        linear-gradient(160deg, #161616 0%, #101010 60%, #141414 100%);
-      color: #f9f6f0;
-      position: relative; overflow: hidden;
-      border-radius: calc(var(--radius) + 6px);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-copy::after {
-      content: "";
-      position: absolute; inset: auto -10% -18% auto;
-      width: 18rem; height: 18rem;
-      background: radial-gradient(circle, rgba(18, 212, 107, 0.14), transparent 65%);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 0.55rem;
-      margin-bottom: 1.2rem;
-      color: rgba(249, 246, 240, 0.72);
-      font-size: 0.82rem; font-weight: 700;
-      letter-spacing: 0.13em; text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: ""; width: 0.65rem; height: 0.65rem;
-      border-radius: 50%; background: var(--green);
-      box-shadow: 0 0 16px rgba(18, 212, 107, 0.6);
-    }
-
-    h1, h2, h3 { margin: 0; line-height: 1.05; }
-    h1, h2 { font-family: "Cormorant Garamond", serif; letter-spacing: -0.03em; }
-
-    h1 {
-      font-size: clamp(3rem, 6.5vw, 5.6rem);
-      max-width: 12ch;
-    }
-
-    .hero-copy > p {
-      margin: 1.4rem 0 0; max-width: 38rem;
-      color: rgba(249, 246, 240, 0.78);
-      font-size: 1.06rem; line-height: 1.65;
-    }
-
-    .hero-actions {
-      display: flex; flex-wrap: wrap;
-      gap: 0.9rem; margin-top: 2.2rem;
-    }
-
-    .hero-note {
-      margin-top: 2rem;
-      display: flex; flex-wrap: wrap; gap: 0.65rem;
-      color: rgba(249, 246, 240, 0.6);
-      font-size: 0.88rem;
-    }
-
-    .hero-note span {
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    /* Hero right — Consent Day countdown card */
-    .hero-aside {
-      border-radius: calc(var(--radius) + 6px);
-      box-shadow: var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.95));
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      padding: clamp(1.5rem, 3vw, 2.2rem);
-      display: flex; flex-direction: column;
-      justify-content: space-between; gap: 1.5rem;
-    }
-
-    .hero-aside-top {
-      display: flex; flex-direction: column; gap: 0.6rem;
-    }
-
-    .aside-kicker {
-      display: inline-flex; width: fit-content;
-      padding: 0.4rem 0.75rem; border-radius: 999px;
-      background: rgba(18, 212, 107, 0.10);
-      color: var(--green-subtle);
-      font-weight: 800; letter-spacing: 0.08em;
-      text-transform: uppercase; font-size: 0.72rem;
-    }
-
-    .hero-aside h2 {
-      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
-      line-height: 1.02;
-    }
-
-    .hero-aside > p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.6;
-    }
-
-    .countdown-row {
-      display: flex; gap: 0.6rem; flex-wrap: wrap;
-    }
-
-    .countdown-unit {
-      flex: 1; min-width: 4.5rem;
-      padding: 0.75rem 0.5rem;
-      background: rgba(24, 22, 19, 0.04);
-      border: 1px solid rgba(24, 22, 19, 0.06);
-      border-radius: 1rem;
-      text-align: center;
-    }
-
-    .countdown-unit strong {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 2rem; font-weight: 700;
-      line-height: 1; letter-spacing: -0.02em;
-      color: var(--ink);
-    }
-
-    .countdown-unit span {
-      font-size: 0.72rem; font-weight: 700;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .aside-tagline {
-      padding: 0.85rem 1rem;
-      background: var(--deep);
-      color: #f9f6f0;
-      border-radius: 1rem;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      text-align: center;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-    }
-
-    /* ── Sections ── */
-    main section { padding: 4.5rem 0; }
-
-    .section-header {
-      display: grid; gap: 0.85rem;
-      margin-bottom: 2.2rem;
-      max-width: 50rem;
-    }
-
-    .section-header p {
-      margin: 0; color: var(--muted); font-size: 1.03rem;
-    }
-
-    h2 { font-size: clamp(2.3rem, 4vw, 3.65rem); }
-
-    /* ── Grids ── */
-    .grid-3, .grid-2 { display: grid; gap: 1.15rem; }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-
-    /* ── Panels ── */
-    .panel {
-      padding: 1.6rem;
-      background: var(--surface);
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      backdrop-filter: blur(12px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .panel h3 {
-      font-size: 1.45rem;
-      font-family: "Cormorant Garamond", serif;
-      margin-bottom: 0.6rem;
-    }
-    .panel p { margin: 0; color: var(--muted); }
-
-    /* Mission cards */
-    .mission-card {
-      min-height: 16rem;
-      display: flex; flex-direction: column;
-      justify-content: space-between;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.64), rgba(255, 255, 255, 0.84)),
-        linear-gradient(135deg, rgba(18, 212, 107, 0.07), transparent 60%);
-    }
-
-    .card-index {
-      font-size: 0.8rem; font-weight: 800;
-      letter-spacing: 0.13em; text-transform: uppercase;
-      color: var(--green-deep);
-    }
-
-    /* Initiative cards */
-    .initiative {
-      padding: 2rem;
-      display: flex; flex-direction: column;
-      gap: 1.1rem; min-height: 22rem;
-    }
-
-    .initiative .kicker {
-      display: inline-flex; width: fit-content;
-      padding: 0.4rem 0.75rem; border-radius: 999px;
-      background: rgba(18, 212, 107, 0.10);
-      color: var(--green-subtle);
-      font-weight: 800; letter-spacing: 0.08em;
-      text-transform: uppercase; font-size: 0.76rem;
-    }
-
-    .initiative ul {
-      list-style: none; padding: 0; margin: 0;
-      display: grid; gap: 0.65rem; color: var(--muted);
-    }
-
-    .initiative li {
-      padding-left: 1.25rem; position: relative;
-    }
-
-    .initiative li::before {
-      content: ""; position: absolute;
-      left: 0; top: 0.7rem;
-      width: 0.4rem; height: 0.4rem;
-      border-radius: 50%;
-      background: var(--green);
-    }
-
-    .initiative a { width: fit-content; }
-
-    /* ── Get Involved ── */
-    .involve-grid {
-      display: grid; gap: 1rem;
-      grid-template-columns: 1.1fr 0.9fr;
-      align-items: stretch;
-    }
-
-    .involve-list {
-      display: grid; gap: 0.75rem;
-    }
-
-    .involve-item {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      gap: 1rem; align-items: center;
-      padding: 1.1rem 1.3rem;
-      border-radius: 1.25rem;
-      background: rgba(255, 255, 255, 0.62);
-      border: 1px solid rgba(24, 22, 19, 0.07);
-      transition: background 150ms ease;
-    }
-
-    .involve-item:hover {
-      background: rgba(255, 255, 255, 0.85);
-    }
-
-    .involve-num {
-      width: 2.2rem; height: 2.2rem;
-      border-radius: 50%; background: #161616; color: #fff;
-      display: grid; place-items: center;
-      font-weight: 800; font-size: 0.85rem;
-    }
-
-    .involve-item strong {
-      display: block; margin-bottom: 0.15rem; font-size: 0.98rem;
-    }
-    .involve-item p { margin: 0; color: var(--muted); font-size: 0.92rem; }
-
-    .involve-arrow {
-      font-size: 1.1rem; color: var(--muted);
-      text-decoration: none; padding: 0.4rem;
-      transition: transform 150ms ease;
-    }
-    .involve-item:hover .involve-arrow { transform: translateX(2px); }
-
-    .impact-panel {
-      background:
-        radial-gradient(circle at 50% 15%, rgba(18, 212, 107, 0.10), transparent 12rem),
-        linear-gradient(180deg, #ffffff 0%, #f3ecdf 100%);
-      display: flex; flex-direction: column;
-      justify-content: center;
-    }
-
-    .impact-panel blockquote {
-      margin: 0;
-      font-family: "Cormorant Garamond", serif;
-      font-size: clamp(1.7rem, 2.8vw, 2.4rem);
-      line-height: 1.08; letter-spacing: -0.03em;
-    }
-
-    .impact-panel cite {
-      display: inline-block; margin-top: 1rem;
-      font-style: normal; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      font-size: 0.76rem; color: var(--muted);
-    }
-
-    .impact-panel > p {
-      margin: 1.2rem 0 0; color: var(--muted); font-size: 0.95rem;
-    }
-
-    /* ── CTA ── */
-    .cta { padding-bottom: 5rem; }
-
-    .cta-panel {
-      display: grid;
-      grid-template-columns: 1.1fr auto;
-      gap: 1.5rem; align-items: center;
-      padding: clamp(1.8rem, 4vw, 2.8rem);
-      background:
-        radial-gradient(circle at left center, rgba(18, 212, 107, 0.12), transparent 18rem),
-        linear-gradient(160deg, #141414 0%, #0f0f0f 100%);
-      color: #f9f6f0;
-      border-radius: calc(var(--radius) + 8px);
-      box-shadow: 0 28px 90px rgba(17, 17, 17, 0.18);
-    }
-
-    .cta-panel h2 { font-size: clamp(1.8rem, 3.2vw, 2.8rem); }
-
-    .cta-panel p {
-      margin: 0.8rem 0 0;
-      color: rgba(249, 246, 240, 0.7);
-      max-width: 40rem; font-size: 1rem;
-    }
-
-    .cta-panel a { color: var(--green); }
-
-    .cta-actions {
-      display: flex; gap: 0.85rem; flex-wrap: wrap;
-    }
-
-    /* ── Footer ── */
-    .site-footer {
-      padding: 0 0 2.5rem;
-      color: var(--muted); font-size: 0.92rem;
-    }
-
-    .footer-bar {
-      display: flex; align-items: center;
-      justify-content: space-between; gap: 1rem;
-      padding-top: 1.2rem;
-      border-top: 1px solid var(--line);
-      flex-wrap: wrap;
-    }
-
-    .footer-bar nav { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .footer-bar nav a { text-decoration: none; }
-    .footer-bar nav a:hover { color: var(--ink); }
-
-    /* ── Responsive ── */
-    @media (max-width: 960px) {
-      .hero-grid, .grid-3, .grid-2,
-      .involve-grid, .cta-panel {
-        grid-template-columns: 1fr;
-      }
-      .hero { padding-top: 3rem; }
-      .cta-actions { width: 100%; }
-    }
-
-    @media (max-width: 720px) {
-      .site-shell { width: min(calc(100% - 1.2rem), var(--max)); }
-
-      .nav {
-        align-items: flex-start; padding: 0.9rem 0;
-        flex-direction: column;
-      }
-      .nav-links { gap: 0.9rem; }
-
-      .hero-copy, .hero-aside, .panel {
-        border-radius: 1.5rem;
-      }
-      .hero-actions, .cta-actions { flex-direction: column; }
-      .button { width: 100%; }
-      h1 { max-width: 10ch; }
-      .involve-item { grid-template-columns: auto 1fr; }
-      .involve-arrow { display: none; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .button { transition: none; }
-    }
+    :root{--surface:rgba(255,255,255,0.72);--ink:#181613;--muted:#5f5a54;--line:rgba(24,22,19,0.12);--deep:#111;--green:#12d46b;--green-deep:#0d9a4d;--green-subtle:#0d7c40;--shadow:0 24px 80px rgba(18,15,12,0.10);--radius:28px;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Manrope",sans-serif;color:var(--ink);background:radial-gradient(circle at top left,rgba(18,212,107,0.10),transparent 26rem),radial-gradient(circle at 85% 12%,rgba(17,17,17,0.05),transparent 22rem),linear-gradient(180deg,#f8f4ee 0%,#f2ebdf 42%,#f8f5ef 100%);line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}a{color:inherit}
+    .skip-link{position:absolute;left:1rem;top:-3rem;padding:.75rem 1rem;background:#fff;border-radius:999px;z-index:100;text-decoration:none}.skip-link:focus{top:1rem}
+    .site-shell{width:min(calc(100% - 2rem),var(--max));margin:0 auto}
+    .site-header{position:sticky;top:0;z-index:10;backdrop-filter:blur(18px);background:rgba(248,244,238,0.72);border-bottom:1px solid rgba(24,22,19,0.06)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:4.8rem}
+    .brand{display:inline-flex;align-items:center;gap:.85rem;text-decoration:none;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}
+    .brand-mark{width:.8rem;height:.8rem;border-radius:50%;background:var(--green);box-shadow:0 0 18px rgba(18,212,107,0.65);flex:0 0 auto}
+    .est-badge{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-left:.15rem}
+    .nav-links{display:flex;align-items:center;gap:1.35rem;flex-wrap:wrap}
+    .nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;text-decoration:none;font-weight:700;font-size:.95rem;letter-spacing:.01em;transition:transform 180ms ease,box-shadow 180ms ease,background 180ms ease}.button:hover,.button:focus-visible{transform:translateY(-1px)}
+    .button-primary{background:var(--green-deep);color:#fff;box-shadow:0 12px 28px rgba(13,154,77,0.22)}.button-primary:hover{background:var(--green-subtle);box-shadow:0 16px 36px rgba(13,154,77,0.28)}
+    .button-dark{background:var(--deep);color:#fff;box-shadow:0 12px 28px rgba(17,17,17,0.16)}
+    .button-secondary{background:rgba(255,255,255,0.66);color:var(--ink);border-color:rgba(24,22,19,0.12)}
+    .button-ghost{background:rgba(255,255,255,0.10);color:rgba(249,246,240,0.9);border-color:rgba(255,255,255,0.15)}
+    .button-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,0.35)}.button-outline-light:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5)}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+    .fade-in{opacity:0;animation:fadeUp .6s ease forwards}.delay-1{animation-delay:.1s}.delay-2{animation-delay:.2s}.delay-3{animation-delay:.3s}.delay-4{animation-delay:.4s}
+    .hero{padding:5rem 0 3rem}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.5rem;align-items:stretch}
+    .hero-copy{padding:clamp(2.2rem,4.5vw,4rem);background:radial-gradient(circle at 30% 0%,rgba(18,212,107,0.12),transparent 18rem),linear-gradient(160deg,#161616 0%,#101010 60%,#141414 100%);color:#f9f6f0;position:relative;overflow:hidden;border-radius:calc(var(--radius) + 6px);box-shadow:var(--shadow)}
+    .hero-copy::after{content:"";position:absolute;inset:auto -10% -18% auto;width:18rem;height:18rem;background:radial-gradient(circle,rgba(18,212,107,0.14),transparent 65%);pointer-events:none}
+    .eyebrow{display:inline-flex;align-items:center;gap:.55rem;margin-bottom:1.2rem;color:rgba(249,246,240,0.68);font-size:.82rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .eyebrow::before{content:"";width:.65rem;height:.65rem;border-radius:50%;background:var(--green);box-shadow:0 0 16px rgba(18,212,107,0.6)}
+    h1,h2,h3{margin:0;line-height:1.05}h1,h2{font-family:"Cormorant Garamond",serif;letter-spacing:-.03em}
+    h1{font-size:clamp(3rem,6.5vw,5.4rem);max-width:14ch}
+    .hero-copy>p{margin:1.4rem 0 0;max-width:38rem;color:rgba(249,246,240,0.78);font-size:1.05rem;line-height:1.65}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;margin-top:2.2rem}
+    .hero-note{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.65rem;color:rgba(249,246,240,0.55);font-size:.85rem}
+    .hero-note span{padding:.4rem .75rem;border-radius:999px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.07)}
+    .hero-aside{border-radius:calc(var(--radius) + 6px);box-shadow:var(--shadow);background:linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,255,255,0.95));border:1px solid rgba(255,255,255,0.7);padding:clamp(1.5rem,3vw,2.2rem);display:flex;flex-direction:column;justify-content:space-between;gap:1.2rem}
+    .hero-aside-top{display:flex;flex-direction:column;gap:.5rem}
+    .aside-kicker{display:inline-flex;width:fit-content;padding:.35rem .7rem;border-radius:999px;background:rgba(18,212,107,0.10);color:var(--green-subtle);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.7rem}
+    .hero-aside h2{font-size:clamp(1.8rem,3vw,2.6rem);line-height:1.02}
+    .hero-aside>p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.55}
+    .countdown-row{display:flex;gap:.5rem;flex-wrap:wrap}
+    .countdown-unit{flex:1;min-width:4rem;padding:.65rem .4rem;background:rgba(24,22,19,0.04);border:1px solid rgba(24,22,19,0.06);border-radius:1rem;text-align:center}
+    .countdown-unit strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.8rem;font-weight:700;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+    .countdown-unit span{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+    .aside-tagline{padding:.8rem 1rem;background:var(--deep);color:#f9f6f0;border-radius:1rem;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:600;text-align:center;letter-spacing:-.01em;line-height:1.3}
+    .aside-cta{text-align:center}.aside-cta a{display:inline-flex;align-items:center;gap:.4rem;text-decoration:none;font-weight:700;font-size:.88rem;color:var(--green-deep);transition:color 150ms ease}.aside-cta a:hover{color:var(--green-subtle)}
+    .why-section{padding:4.5rem 0 2rem}
+    .why-panel{max-width:52rem;margin:0 auto;text-align:center;padding:3rem 2rem}
+    .why-panel p{font-family:"Cormorant Garamond",serif;font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.25;letter-spacing:-.02em;color:var(--ink);margin:0}
+    .why-panel p+p{margin-top:1.2rem;font-family:"Manrope",sans-serif;font-size:1.02rem;line-height:1.65;color:var(--muted);letter-spacing:0}
+    main section{padding:4.5rem 0}
+    .section-header{display:grid;gap:.85rem;margin-bottom:2.2rem;max-width:50rem}.section-header p{margin:0;color:var(--muted);font-size:1.03rem}
+    h2{font-size:clamp(2.3rem,4vw,3.65rem)}
+    .grid-3,.grid-2{display:grid;gap:1.15rem}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .panel{padding:1.6rem;background:var(--surface);border:1px solid rgba(255,255,255,0.55);backdrop-filter:blur(12px);border-radius:var(--radius);box-shadow:var(--shadow)}
+    .panel h3{font-size:1.45rem;font-family:"Cormorant Garamond",serif;margin-bottom:.6rem}.panel p{margin:0;color:var(--muted)}
+    .mission-card{min-height:11rem;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,0.64),rgba(255,255,255,0.84)),linear-gradient(135deg,rgba(18,212,107,0.07),transparent 60%)}
+    .card-index{font-size:.8rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--green-deep)}
+    .initiative{padding:2rem;display:flex;flex-direction:column;gap:1.1rem;min-height:22rem}
+    .initiative .kicker{display:inline-flex;width:fit-content;padding:.4rem .75rem;border-radius:999px;background:rgba(18,212,107,0.10);color:var(--green-subtle);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.76rem}
+    .initiative ul{list-style:none;padding:0;margin:0;display:grid;gap:.65rem;color:var(--muted)}
+    .initiative li{padding-left:1.25rem;position:relative}.initiative li::before{content:"";position:absolute;left:0;top:.7rem;width:.4rem;height:.4rem;border-radius:50%;background:var(--green)}
+    .initiative a{width:fit-content}
+    .involve-grid{display:grid;gap:1rem;grid-template-columns:1.1fr .9fr;align-items:stretch}
+    .involve-list{display:grid;gap:.75rem}
+    .involve-item{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1.1rem 1.3rem;border-radius:1.25rem;background:rgba(255,255,255,0.62);border:1px solid rgba(24,22,19,0.07);text-decoration:none;transition:background 150ms ease,border-color 150ms ease}
+    .involve-item:hover{background:rgba(255,255,255,0.88);border-color:rgba(24,22,19,0.12)}
+    .involve-num{width:2.2rem;height:2.2rem;border-radius:50%;background:#161616;color:#fff;display:grid;place-items:center;font-weight:800;font-size:.85rem}
+    .involve-item strong{display:block;margin-bottom:.15rem;font-size:.98rem}.involve-item p{margin:0;color:var(--muted);font-size:.92rem}
+    .involve-arrow{font-size:1.1rem;color:var(--muted);padding:.4rem;transition:transform 150ms ease}.involve-item:hover .involve-arrow{transform:translateX(3px)}
+    .involve-highlight{background:rgba(18,212,107,0.06);border-color:rgba(18,212,107,0.18)}.involve-highlight:hover{background:rgba(18,212,107,0.10);border-color:rgba(18,212,107,0.25)}
+    .seats-tag{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--green-deep);background:rgba(18,212,107,0.12);padding:.2rem .55rem;border-radius:999px;margin-left:.5rem}
+    .impact-panel{background:radial-gradient(circle at 50% 15%,rgba(18,212,107,0.10),transparent 12rem),linear-gradient(180deg,#fff 0%,#f3ecdf 100%);display:flex;flex-direction:column;justify-content:center}
+    .impact-panel blockquote{margin:0;font-family:"Cormorant Garamond",serif;font-size:clamp(1.65rem,2.6vw,2.3rem);line-height:1.08;letter-spacing:-.03em}
+    .impact-panel cite{display:inline-block;margin-top:1rem;font-style:normal;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.76rem;color:var(--muted)}
+    .impact-panel>p{margin:1.2rem 0 0;color:var(--muted);font-size:.95rem}
+    .cta{padding-bottom:5rem}
+    .cta-panel{display:grid;grid-template-columns:1.1fr auto;gap:1.5rem;align-items:center;padding:clamp(1.8rem,4vw,2.8rem);background:radial-gradient(circle at left center,rgba(18,212,107,0.12),transparent 18rem),linear-gradient(160deg,#141414 0%,#0f0f0f 100%);color:#f9f6f0;border-radius:calc(var(--radius) + 8px);box-shadow:0 28px 90px rgba(17,17,17,0.18)}
+    .cta-panel h2{font-size:clamp(1.8rem,3.2vw,2.8rem)}
+    .cta-panel p{margin:.8rem 0 0;color:rgba(249,246,240,0.7);max-width:40rem;font-size:1rem}.cta-panel a{color:rgba(169,236,195,0.85)}
+    .cta-actions{display:flex;gap:.85rem;flex-wrap:wrap}
+    .site-footer{padding:0 0 2.5rem;color:var(--muted);font-size:.92rem}
+    .footer-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.2rem;border-top:1px solid var(--line);flex-wrap:wrap}
+    .footer-bar nav{display:flex;gap:1rem;flex-wrap:wrap}.footer-bar nav a{text-decoration:none}.footer-bar nav a:hover{color:var(--ink)}
+    @media(max-width:960px){.hero-grid,.grid-3,.grid-2,.involve-grid,.cta-panel{grid-template-columns:1fr}.hero{padding-top:3rem}.cta-actions{width:100%}}
+    @media(max-width:720px){.site-shell{width:min(calc(100% - 1.2rem),var(--max))}.nav{align-items:flex-start;padding:.9rem 0;flex-direction:column}.nav-links{gap:.9rem}.hero-copy,.hero-aside,.panel{border-radius:1.5rem}.hero-actions,.cta-actions{flex-direction:column}.button{width:100%}h1{max-width:12ch}.involve-item{grid-template-columns:auto 1fr}.involve-arrow{display:none}.why-panel{padding:2rem 1rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.fade-in{animation:none;opacity:1}}
   </style>
 </head>
 <body>
@@ -556,266 +111,196 @@
       <a class="brand" href="#top" aria-label="Freely Given home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>Freely Given</span>
+        <span class="est-badge">Est. 2025</span>
       </a>
       <nav class="nav-links" aria-label="Primary">
         <a href="#mission">Mission</a>
         <a href="#initiatives">Initiatives</a>
         <a href="#get-involved">Get Involved</a>
-        <a class="button button-secondary" href="#get-involved">
-          Join the Mission
-        </a>
+        <a class="button button-secondary" href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">Follow @is_freelygiven</a>
       </nav>
     </div>
   </header>
 
   <main id="main-content">
 
-    <!-- ════ HERO ════ -->
     <section class="hero" id="top">
       <div class="site-shell hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">A nonprofit consent movement</div>
-          <h1>Consent should be clearer, safer, and impossible to ignore.</h1>
-          <p>
-            Freely Given is building a public movement around consent — promoting culture change,
-            leading awareness campaigns, and creating tools that help people make safer, more
-            informed choices.
+          <div class="eyebrow fade-in">Nonprofit &middot; Founded 2025</div>
+          <h1 class="fade-in delay-1">Consent should be impossible to ignore.</h1>
+          <p class="fade-in delay-2">
+            Too many people have learned about boundaries the hard way — through silence,
+            pressure, or harm they didn't see coming. Freely Given exists to change that,
+            with tools, campaigns, and a growing movement you can be part of.
           </p>
-          <div class="hero-actions">
-            <a class="button button-primary" href="#get-involved">Join the Mission</a>
-            <a class="button button-ghost" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">
-              Use the Accountability Tool
-            </a>
+          <div class="hero-actions fade-in delay-3">
+            <a class="button button-primary" href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">Become a Founding Supporter</a>
+            <a class="button button-ghost" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">Use the Accountability Tool</a>
           </div>
-          <div class="hero-note" aria-label="Key highlights">
+          <div class="hero-note fade-in delay-4">
             <span>Culture change</span>
-            <span>August 1 every year</span>
-            <span>@is_freelygiven</span>
+            <span>Consent Day — Aug 1</span>
+            <span>Board seats open</span>
           </div>
         </div>
 
-        <aside class="hero-aside" aria-label="International Consent Day countdown">
+        <aside class="hero-aside fade-in delay-2" aria-label="International Consent Day countdown">
           <div class="hero-aside-top">
-            <span class="aside-kicker">Launching August 1, 2026</span>
+            <span class="aside-kicker">Aug 1st, 2026 &middot; A day marked since 2024</span>
             <h2>International Consent Day</h2>
           </div>
-          <p>
-            An annual public moment to talk about consent, attraction, respect, and
-            cultural change. Growing toward Consent Week.
-          </p>
+          <p>An annual public moment to talk about boundaries, attraction, respect, and what real culture change looks like.</p>
           <div class="countdown-row" id="countdown">
-            <div class="countdown-unit">
-              <strong id="cd-days">--</strong>
-              <span>Days</span>
-            </div>
-            <div class="countdown-unit">
-              <strong id="cd-hours">--</strong>
-              <span>Hours</span>
-            </div>
-            <div class="countdown-unit">
-              <strong id="cd-min">--</strong>
-              <span>Min</span>
-            </div>
-            <div class="countdown-unit">
-              <strong id="cd-sec">--</strong>
-              <span>Sec</span>
-            </div>
+            <div class="countdown-unit"><strong id="cd-days">--</strong><span>Days</span></div>
+            <div class="countdown-unit"><strong id="cd-hours">--</strong><span>Hours</span></div>
+            <div class="countdown-unit"><strong id="cd-min">--</strong><span>Min</span></div>
+            <div class="countdown-unit"><strong id="cd-sec">--</strong><span>Sec</span></div>
           </div>
-          <div class="aside-tagline">
-            "A sexy summer starts with consent."
-          </div>
+          <div class="aside-tagline">"A sexy summer starts with consent."</div>
+          <div class="aside-cta"><a href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">Be part of this year's &#8594;</a></div>
         </aside>
       </div>
     </section>
 
-    <!-- ════ MISSION ════ -->
+    <section class="why-section">
+      <div class="site-shell">
+        <div class="why-panel fade-in">
+          <p>Because "I didn't know" shouldn't be an excuse. And "I was afraid to say no" shouldn't be a story anyone has to tell.</p>
+          <p>Freely Given is building the infrastructure for a world where respect is the default — not the exception. Where people have the language, the tools, and the cultural backing to set boundaries and be heard.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="mission">
       <div class="site-shell">
         <div class="section-header">
-          <h2>What Freely Given does.</h2>
-          <p>
-            Make consent easier to understand, easier to talk about, and easier to defend
-            in public life.
-          </p>
+          <h2>How we get there.</h2>
+          <p>Three pillars. One mission: make respect, safety, and informed choice the public standard — not a private hope.</p>
         </div>
-
         <div class="grid-3">
-          <article class="panel mission-card">
+          <article class="panel mission-card fade-in">
             <div>
               <div class="card-index">01 Culture Change</div>
-              <h3>Move consent from a private conversation to a public standard.</h3>
+              <h3>Make respect as obvious as seatbelts.</h3>
             </div>
-            <p>
-              Through awareness, language, and sustained cultural attention — making consent
-              something people expect, not just hope for.
-            </p>
+            <p>Seatbelts went from optional to obvious. We're doing the same for boundaries — through language, visibility, and sustained public attention until it's just how things work.</p>
           </article>
-
-          <article class="panel mission-card">
+          <article class="panel mission-card fade-in delay-1">
             <div>
               <div class="card-index">02 Accountability Tools</div>
-              <h3>Build resources that support safety and informed choices.</h3>
+              <h3>Check before you trust.</h3>
             </div>
-            <p>
-              Public-interest tools that bring visibility, structure, and accountability to
-              issues too often ignored.
-            </p>
+            <p>Starting with badactoridentifier.com — a tool that helps you look someone up before you meet them, flag patterns, and make safer choices with better information.</p>
           </article>
-
-          <article class="panel mission-card">
+          <article class="panel mission-card fade-in delay-2">
             <div>
               <div class="card-index">03 Awareness Campaigns</div>
-              <h3>Keep consent visible in culture, media, and community life.</h3>
+              <h3>Give the conversation a date on the calendar.</h3>
             </div>
-            <p>
-              Campaigns that widen awareness, invite participation, and keep the conversation
-              going beyond a single headline.
-            </p>
+            <p>International Consent Day, August 1. A recurring public moment that keeps the conversation going beyond any single headline — growing toward Consent Week.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ════ INITIATIVES ════ -->
     <section id="initiatives">
       <div class="site-shell">
         <div class="section-header">
-          <h2>The work so far</h2>
-          <p>
-            Two flagship initiatives — a public accountability tool and an annual awareness
-            campaign — with more to come.
-          </p>
+          <h2>Two flagship initiatives</h2>
+          <p>A public accountability tool and an annual awareness campaign — the first two pieces of a larger system.</p>
         </div>
-
         <div class="grid-2">
-          <article class="panel initiative">
+          <article class="panel initiative fade-in">
             <span class="kicker">Accountability Tool</span>
             <div>
               <h3>badactoridentifier.com</h3>
-              <p>
-                A public-facing accountability tool under the Freely Given umbrella, built to
-                support safer, more informed choices where trust and safety matter.
-              </p>
+              <p>A public resource for people who want to make more informed decisions about who they trust — in dating, business, or daily life.</p>
             </div>
             <ul aria-label="Tool highlights">
-              <li>Part of a wider nonprofit mission focused on consent, safety, and public awareness.</li>
-              <li>A practical entry point into the accountability side of the work.</li>
-              <li>Sits alongside education and advocacy as one piece of a larger system.</li>
+              <li>Look up someone before you meet them.</li>
+              <li>See if there's a pattern others have already flagged.</li>
+              <li>Make a safer choice with better information.</li>
             </ul>
-            <a class="button button-secondary" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">
-              Explore the tool
-            </a>
+            <a class="button button-secondary" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">Try the tool</a>
           </article>
-
-          <article class="panel initiative">
+          <article class="panel initiative fade-in delay-1">
             <span class="kicker">Annual Campaign</span>
             <div>
               <h3>International Consent Day</h3>
-              <p>
-                Observed every August 1 — a clear public moment to talk about consent,
-                attraction, respect, and what culture change actually looks like.
-              </p>
+              <p>Every August 1 — a clear public moment to talk about boundaries, attraction, respect, and what it actually takes to change a culture.</p>
             </div>
             <ul aria-label="International Consent Day highlights">
-              <li>An annual focal point for supporters, educators, and advocates.</li>
-              <li>2026 theme: "Consent is sexy" — with the campaign line "A sexy summer starts with consent."</li>
+              <li>2026 theme: "Consent is sexy" — shareable, bold, designed to spread.</li>
+              <li>An annual rallying point for advocates, educators, and anyone who cares.</li>
               <li>Built to grow from a single day into Consent Week.</li>
             </ul>
-            <a class="button button-secondary" href="#get-involved">How to take part</a>
+            <a class="button button-secondary" href="#get-involved">Be part of it</a>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ════ GET INVOLVED ════ -->
     <section id="get-involved">
       <div class="site-shell">
         <div class="section-header">
-          <h2>How you can take part.</h2>
-          <p>
-            This work depends on people who want consent to be taken seriously in public life.
-            Freely Given is actively seeking board members and collaborators.
-          </p>
+          <h2>Become a founding advocate.</h2>
+          <p>This is early. That means you can shape it. Whether you follow, share, serve on the board, or bring a partnership — you're building this with us.</p>
         </div>
-
         <div class="involve-grid">
-          <div class="panel involve-list-wrap">
-            <div class="involve-list">
-
-              <a href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer" class="involve-item" style="text-decoration:none;">
-                <div class="involve-num">1</div>
-                <div>
-                  <strong>Use the accountability tool</strong>
-                  <p>Explore badactoridentifier.com — the practical side of the mission.</p>
-                </div>
-                <span class="involve-arrow" aria-hidden="true">&#8594;</span>
-              </a>
-
-              <a href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer" class="involve-item" style="text-decoration:none;">
-                <div class="involve-num">2</div>
-                <div>
-                  <strong>Follow and share</strong>
-                  <p>Follow @is_freelygiven and help spread International Consent Day.</p>
-                </div>
-                <span class="involve-arrow" aria-hidden="true">&#8594;</span>
-              </a>
-
-              <a href="mailto:info@isfreelygiven.org" class="involve-item" style="text-decoration:none;">
-                <div class="involve-num">3</div>
-                <div>
-                  <strong>Join the board</strong>
-                  <p>Seeking members with backgrounds in finance, legal, and mission leadership.</p>
-                </div>
-                <span class="involve-arrow" aria-hidden="true">&#8594;</span>
-              </a>
-
-              <a href="mailto:info@isfreelygiven.org" class="involve-item" style="text-decoration:none;">
-                <div class="involve-num">4</div>
-                <div>
-                  <strong>Collaborate</strong>
-                  <p>Partnerships, campaigns, and awareness — reach out to build together.</p>
-                </div>
-                <span class="involve-arrow" aria-hidden="true">&#8594;</span>
-              </a>
-
-            </div>
+          <div class="involve-list">
+            <a href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer" class="involve-item involve-highlight">
+              <div class="involve-num" style="background:var(--green-deep)">1</div>
+              <div>
+                <strong>Follow @is_freelygiven</strong>
+                <p>Join the first wave. Share the mission. Help us reach critical mass before August 1.</p>
+              </div>
+              <span class="involve-arrow" aria-hidden="true">&#8594;</span>
+            </a>
+            <a href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer" class="involve-item">
+              <div class="involve-num">2</div>
+              <div>
+                <strong>Use the accountability tool</strong>
+                <p>Look someone up before you trust them. The practical side of the mission.</p>
+              </div>
+              <span class="involve-arrow" aria-hidden="true">&#8594;</span>
+            </a>
+            <a href="/cdn-cgi/l/email-protection#4f262129200f263c293d2a2a23362826392a2161203d28" class="involve-item involve-highlight">
+              <div class="involve-num" style="background:var(--green-deep)">3</div>
+              <div>
+                <strong>Join the board <span class="seats-tag">4 founding seats</span></strong>
+                <p>Finance, legal, or mission leadership. Help steer the organization from the ground up.</p>
+              </div>
+              <span class="involve-arrow" aria-hidden="true">&#8594;</span>
+            </a>
+            <a href="/cdn-cgi/l/email-protection#365f585059765f45504453535a4f515f40535818594451" class="involve-item">
+              <div class="involve-num">4</div>
+              <div>
+                <strong>Collaborate or partner</strong>
+                <p>Campaigns, events, press, or institutional partnerships. Let's build together.</p>
+              </div>
+              <span class="involve-arrow" aria-hidden="true">&#8594;</span>
+            </a>
           </div>
-
           <aside class="panel impact-panel">
-            <blockquote>
-              "Consent becomes culture when people understand it, talk about it, and act on it together."
-            </blockquote>
+            <blockquote>"Respect becomes culture when people understand it, talk about it, and act on it together."</blockquote>
             <cite>— Freely Given</cite>
-            <p>
-              Clear language. Practical tools. Awareness efforts people can join. Leadership from
-              people who want to build something lasting.
-            </p>
+            <p>Clear language. Practical tools. A date on the calendar. And a growing community of people who believe this matters enough to build it.</p>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- ════ CTA ════ -->
     <section class="cta">
       <div class="site-shell">
         <div class="cta-panel">
           <div>
-            <h2>The movement starts here.</h2>
-            <p>
-              Use the tool. Follow
-              <a href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">@is_freelygiven</a>.
-              Help build momentum for International Consent Day every August 1.
-              Board and collaborator inquiries welcome at
-              <a href="mailto:info@isfreelygiven.org">info@isfreelygiven.org</a>.
-            </p>
+            <h2>The first wave starts now.</h2>
+            <p>Follow <a href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">@is_freelygiven</a>. Use the <a href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">accountability tool</a>. Help build momentum for August 1. Board and partnership inquiries: <a href="/cdn-cgi/l/email-protection#e980878f86a9809a8f9b8c8c85908e809f8c87c7869b8e"><span class="__cf_email__" data-cfemail="6801060e0728011b0e1a0d0d04110f011e0d0646071a0f">[email&#160;protected]</span></a>.</p>
           </div>
           <div class="cta-actions">
-            <a class="button button-primary" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">
-              Use the Tool
-            </a>
-            <a class="button button-ghost" href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">
-              Follow on Instagram
-            </a>
+            <a class="button button-primary" href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">Follow Now</a>
+            <a class="button button-outline-light" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">Use the Tool</a>
           </div>
         </div>
       </div>
@@ -825,43 +310,24 @@
 
   <footer class="site-footer">
     <div class="site-shell footer-bar">
-      <span>Freely Given &middot; A nonprofit consent movement</span>
+      <span>Freely Given &middot; A nonprofit consent movement &middot; Est. 2025</span>
       <nav aria-label="Footer">
         <a href="#mission">Mission</a>
         <a href="#initiatives">Initiatives</a>
         <a href="#get-involved">Get Involved</a>
         <a href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="mailto:info@isfreelygiven.org">Contact</a>
+        <a href="/cdn-cgi/l/email-protection#0a63646c654a63796c786f6f66736d637c6f642465786d"><span class="__cf_email__" data-cfemail="640d0a020b240d1702160101081d030d12010a4a0b1603">[email&#160;protected]</span></a>
       </nav>
     </div>
   </footer>
 
-  <!-- Countdown timer -->
-  <script>
-    (function() {
-      var target = new Date('2026-08-01T00:00:00').getTime();
-      function update() {
-        var now = Date.now();
-        var diff = target - now;
-        if (diff < 0) {
-          document.getElementById('cd-days').textContent = '0';
-          document.getElementById('cd-hours').textContent = '0';
-          document.getElementById('cd-min').textContent = '0';
-          document.getElementById('cd-sec').textContent = '0';
-          return;
-        }
-        var d = Math.floor(diff / 86400000);
-        var h = Math.floor((diff % 86400000) / 3600000);
-        var m = Math.floor((diff % 3600000) / 60000);
-        var s = Math.floor((diff % 60000) / 1000);
-        document.getElementById('cd-days').textContent = d;
-        document.getElementById('cd-hours').textContent = h;
-        document.getElementById('cd-min').textContent = m;
-        document.getElementById('cd-sec').textContent = s;
-      }
-      update();
-      setInterval(update, 1000);
-    })();
-  </script>
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    (function(){
+      var t=new Date('2026-08-01T00:00:00').getTime();
+      function u(){
+        var n=Date.now(),d=t-n;
+        if(d<0){document.getElementById('cd-days').textContent='0';document.getElementById('cd-hours').textContent='0';document.getElementById('cd-min').textContent='0';document.getElementById('cd-sec').textContent='0';return}
+        document.getElementById('cd-days').textContent=Math.floor(d/864e5);
+        document.getElementById('cd-hours').textContent=Math.floor((d%864e5)/36e5);
+        document.getElementById('cd-min').textContent=Math.floor((d%36e5)/6e4);
+        document.getElementById('cd-sec').textCont
