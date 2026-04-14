@@ -29,7 +29,7 @@
     .est-badge{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-left:.15rem}
     .nav-links{display:flex;align-items:center;gap:1.35rem;flex-wrap:wrap}
     .nav-links a{text-decoration:none;color:var(--muted);font-weight:600;font-size:.95rem}.nav-links a:hover,.nav-links a:focus-visible{color:var(--ink)}
-    .button{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;text-decoration:none;font-weight:700;font-size:.95rem;letter-spacing:.01em;transition:transform 180ms ease,box-shadow 180ms ease,background 180ms ease}.button:hover,.button:focus-visible{transform:translateY(-1px)}
+    .button{display:inline-flex;align-items:center;justify-content:center;min-height:3.1rem;padding:.85rem 1.5rem;border-radius:999px;border:1px solid transparent;text-decoration:none;font-family:inherit;font-weight:700;font-size:.95rem;letter-spacing:.01em;cursor:pointer;transition:transform 180ms ease,box-shadow 180ms ease,background 180ms ease}.button:hover,.button:focus-visible{transform:translateY(-1px)}
     .button-primary{background:var(--green-deep);color:#fff;box-shadow:0 12px 28px rgba(13,154,77,0.22)}.button-primary:hover{background:var(--green-subtle);box-shadow:0 16px 36px rgba(13,154,77,0.28)}
     .button-dark{background:var(--deep);color:#fff;box-shadow:0 12px 28px rgba(17,17,17,0.16)}
     .button-secondary{background:rgba(255,255,255,0.66);color:var(--ink);border-color:rgba(24,22,19,0.12)}
@@ -98,6 +98,21 @@
     .site-footer{padding:0 0 2.5rem;color:var(--muted);font-size:.92rem}
     .footer-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.2rem;border-top:1px solid var(--line);flex-wrap:wrap}
     .footer-bar nav{display:flex;gap:1rem;flex-wrap:wrap}.footer-bar nav a{text-decoration:none}.footer-bar nav a:hover{color:var(--ink)}
+    .fs-modal{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;padding:1.2rem}
+    .fs-modal[hidden]{display:none}
+    .fs-backdrop{position:absolute;inset:0;background:rgba(10,9,8,0.7);backdrop-filter:blur(6px)}
+    .fs-panel{position:relative;width:min(32rem,100%);background:radial-gradient(circle at 30% 0%,rgba(18,212,107,0.14),transparent 18rem),linear-gradient(160deg,#161616 0%,#101010 60%,#141414 100%);color:#f9f6f0;border-radius:calc(var(--radius) + 4px);padding:clamp(1.8rem,3.5vw,2.6rem);box-shadow:0 32px 90px rgba(0,0,0,0.45);border:1px solid rgba(255,255,255,0.08);animation:fadeUp .35s ease both;overflow:hidden}
+    .fs-panel .eyebrow{color:rgba(249,246,240,0.68);margin-bottom:.8rem}
+    .fs-panel h2{font-size:clamp(1.8rem,3vw,2.4rem);line-height:1.05;margin:0 0 .85rem;max-width:16ch}
+    .fs-panel>p{margin:0 0 1.5rem;color:rgba(249,246,240,0.72);font-size:.98rem;line-height:1.55}
+    .fs-close{position:absolute;top:1rem;right:1rem;width:2.2rem;height:2.2rem;border-radius:50%;background:rgba(255,255,255,0.08);color:#f9f6f0;border:1px solid rgba(255,255,255,0.12);font:inherit;font-size:1.4rem;line-height:1;cursor:pointer;display:grid;place-items:center;padding:0;transition:background 150ms ease}
+    .fs-close:hover,.fs-close:focus-visible{background:rgba(255,255,255,0.14);outline:none}
+    .fs-options{display:grid;gap:.8rem}
+    .fs-option{text-align:left;padding:1.1rem 1.3rem;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:1.2rem;color:#f9f6f0;font:inherit;cursor:pointer;display:grid;gap:.25rem;transition:background 150ms ease,border-color 150ms ease,transform 150ms ease}
+    .fs-option:hover,.fs-option:focus-visible{background:rgba(18,212,107,0.12);border-color:rgba(18,212,107,0.35);transform:translateY(-1px);outline:none}
+    .fs-option strong{font-size:1.02rem;font-weight:700}
+    .fs-option span{color:rgba(249,246,240,0.65);font-size:.9rem;line-height:1.45}
+    body.fs-lock{overflow:hidden}
     @media(max-width:960px){.hero-grid,.grid-3,.grid-2,.involve-grid,.cta-panel{grid-template-columns:1fr}.hero{padding-top:3rem}.cta-actions{width:100%}}
     @media(max-width:720px){.site-shell{width:min(calc(100% - 1.2rem),var(--max))}.nav{align-items:flex-start;padding:.9rem 0;flex-direction:column}.nav-links{gap:.9rem}.hero-copy,.hero-aside,.panel{border-radius:1.5rem}.hero-actions,.cta-actions{flex-direction:column}.button{width:100%}h1{max-width:12ch}.involve-item{grid-template-columns:auto 1fr}.involve-arrow{display:none}.why-panel{padding:2rem 1rem}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button{transition:none}.fade-in{animation:none;opacity:1}}
@@ -135,7 +150,7 @@
             with tools, campaigns, and a growing movement you can be part of.
           </p>
           <div class="hero-actions fade-in delay-3">
-            <a class="button button-primary" href="https://instagram.com/is_freelygiven" target="_blank" rel="noreferrer">Become a Founding Supporter</a>
+            <button type="button" class="button button-primary" id="fs-open" aria-haspopup="dialog" aria-controls="fs-modal">Become a Founding Supporter</button>
             <a class="button button-ghost" href="https://www.badactoridentifier.com/" target="_blank" rel="noreferrer">Use the Accountability Tool</a>
           </div>
           <div class="hero-note fade-in delay-4">
@@ -308,6 +323,30 @@
 
   </main>
 
+  <div class="fs-modal" id="fs-modal" role="dialog" aria-modal="true" aria-labelledby="fs-title" hidden>
+    <div class="fs-backdrop" data-close="1"></div>
+    <div class="fs-panel">
+      <button type="button" class="fs-close" aria-label="Close dialog" data-close="1">&times;</button>
+      <div class="eyebrow">Become a founding supporter</div>
+      <h2 id="fs-title">How do you want to help?</h2>
+      <p>Pick the way you want to show up. We'll open an email with the details pre-filled — just fill in the blanks and hit send.</p>
+      <div class="fs-options">
+        <button type="button" class="fs-option" data-action="board">
+          <strong>Join the board</strong>
+          <span>Finance, legal, or mission leadership. 4 founding seats open.</span>
+        </button>
+        <button type="button" class="fs-option" data-action="collaborate">
+          <strong>Collaborate</strong>
+          <span>Campaigns, events, press, or institutional partnerships.</span>
+        </button>
+        <button type="button" class="fs-option" data-action="donate">
+          <strong>Donate</strong>
+          <span>Fund the work. Every contribution helps launch the movement.</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <footer class="site-footer">
     <div class="site-shell footer-bar">
       <span>Freely Given &middot; A nonprofit consent movement &middot; Est. 2025</span>
@@ -333,6 +372,30 @@
         document.getElementById('cd-sec').textContent=Math.floor((d%6e4)/1e3);
       }
       u();setInterval(u,1000);
+    })();
+    (function(){
+      var openBtn=document.getElementById('fs-open'),modal=document.getElementById('fs-modal');
+      if(!openBtn||!modal)return;
+      function d(s){var r='',k=parseInt(s.substr(0,2),16);for(var i=2;i<s.length;i+=2)r+=String.fromCharCode(parseInt(s.substr(i,2),16)^k);return r;}
+      var enc='4f262129200f263c293d2a2a23362826392a2161203d28';
+      var m={
+        board:{s:'Join the board',b:"Hi,\n\nI am interested in joining the board. I work with _____ and can contribute by _____.\n\nThanks!"},
+        collaborate:{s:'Collaboration inquiry',b:"Hi,\n\nI am interested in collaborating with Freely Given. I work with _____ and we could partner on _____.\n\nThanks!"},
+        donate:{s:'Donation',b:"Hi,\n\nI'd like to support Freely Given. I'm interested in contributing _____ and would love to know more about how to donate.\n\nThanks!"}
+      };
+      var last;
+      function open(){last=document.activeElement;modal.hidden=false;document.body.classList.add('fs-lock');var f=modal.querySelector('.fs-option');if(f)f.focus();}
+      function close(){modal.hidden=true;document.body.classList.remove('fs-lock');if(last&&last.focus)last.focus();}
+      openBtn.addEventListener('click',function(e){e.preventDefault();open();});
+      modal.addEventListener('click',function(e){if(e.target&&e.target.dataset&&e.target.dataset.close)close();});
+      document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!modal.hidden)close();});
+      modal.querySelectorAll('.fs-option').forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var a=m[btn.dataset.action];if(!a)return;
+          window.location.href='mailto:'+d(enc)+'?subject='+encodeURIComponent(a.s)+'&body='+encodeURIComponent(a.b);
+          close();
+        });
+      });
     })();
   </script>
 </body>
