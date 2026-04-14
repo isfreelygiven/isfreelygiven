@@ -9,7 +9,7 @@
   <meta property="og:description" content="Too many people have learned about consent the hard way. We're building the movement to change that.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://isfreelygiven.org">
-  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:image" content="assets/freely-given-logo.jpeg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='42' fill='%2312d46b'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -330,4 +330,10 @@
         document.getElementById('cd-days').textContent=Math.floor(d/864e5);
         document.getElementById('cd-hours').textContent=Math.floor((d%864e5)/36e5);
         document.getElementById('cd-min').textContent=Math.floor((d%36e5)/6e4);
-        document.getElementById('cd-sec').textCont
+        document.getElementById('cd-sec').textContent=Math.floor((d%6e4)/1e3);
+      }
+      u();setInterval(u,1000);
+    })();
+  </script>
+</body>
+</html>
